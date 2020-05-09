@@ -1,6 +1,14 @@
-# DemoNgxSidebar
+# Demo Angular Sidebar
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
+
+## Key Points
+
+### The parent element of sidebar
+
+* Must have the classes `d-flex` & `align-items-stretch`
+
+
 
 ## Development server
 
