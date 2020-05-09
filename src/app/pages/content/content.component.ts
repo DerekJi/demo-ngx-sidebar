@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarService } from '@pages/core/sidebar.service';
 
 @Component({
   selector: 'app-content',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private sidebar: SidebarService,
+  ) { }
 
   ngOnInit(): void {
   }
 
+  get sidebarActive$() {
+    return this.sidebar.active$();
+  }
+
+  toggleSidebar() {
+    this.sidebar.toggleActive();
+  }
 }

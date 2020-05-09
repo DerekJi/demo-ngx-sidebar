@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarService } from '@pages/core/sidebar.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sidebar: SidebarService) { }
 
   ngOnInit(): void {
+  }
+
+  get active$(): Observable<boolean> {
+    return this.sidebar.active$();
   }
 
 }

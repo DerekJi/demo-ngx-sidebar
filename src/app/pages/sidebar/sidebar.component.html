@@ -1,3 +1,5 @@
 <nav id="sidebar">
-  <h4 class="text-center mt-4 pt-4">SideBar</h4>
+  <h4 class="text-center mt-4 pt-4 {{ (active$ | async) ? 'active' : ''}}">SideBar</h4>
 </nav>
+
+<div class="overlay {{ (active$ | async) ? 'active' : ''}}"></div>
