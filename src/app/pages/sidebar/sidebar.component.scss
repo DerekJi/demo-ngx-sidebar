@@ -1,18 +1,14 @@
-.wrapper {
-  display: flex;
-  width: 100%;
-  align-items: stretch;
-}
+@import '_variables.scss';
 
 #sidebar {
-  width: var(--sidebar-width);
+  width: $sidebar-width;
   position: fixed;
   top: 0;
-  margin-left: var(--sidebar-width-minus);
+  margin-left: (-$sidebar-width);
   height: 100vh;
   z-index: 999;
-  background: #7386D5;
-  color: #fff;
+  background: $primary-bgcolor;
+  color: $primary-fgcolor;
   transition: all 0.3s;
 }
 
@@ -55,7 +51,7 @@ a[data-toggle="collapse"] {
 ----------------------------------------------------- */
 @media (max-width: 768px) {
   #sidebar {
-      margin-left: var(--sidebar-width-minus);
+      margin-left: (-$sidebar-width);
   }
   #sidebar.active {
       margin-left: 0;
