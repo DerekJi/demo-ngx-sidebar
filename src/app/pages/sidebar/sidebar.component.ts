@@ -14,8 +14,8 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  get active$(): Observable<boolean> {
-    return this.sidebar.active$();
-  }
+  get active$(): Observable<boolean> { return this.sidebar.active$(); }
+
+  toggleActive(): void { this.sidebar.toggleActive(); }
 
 }
