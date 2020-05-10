@@ -13,15 +13,3 @@
 #content.active {
   width: 100%;
 }
-
-/* ---------------------------------------------------
-    MEDIAQUERIES
------------------------------------------------------ */
-@media (max-width: 768px) {
-  #content {
-      width: 100%;
-  }
-  #content.active {
-      width: calc(100% - $sidebar-width);
-  }
-}

@@ -1,10 +1,8 @@
 @import '_variables.scss';
 
 #sidebar {
-  width: $sidebar-width;
   position: fixed;
   top: 0;
-  margin-left: (-$sidebar-width);
   height: 100vh;
   z-index: 999;
   background: $primary-bgcolor;
@@ -43,20 +41,4 @@ a[data-toggle="collapse"] {
 .overlay.active {
   display: block;
   opacity: 1;
-}
-
-
-/* ---------------------------------------------------
-    MEDIAQUERIES
------------------------------------------------------ */
-@media (max-width: 768px) {
-  #sidebar {
-      margin-left: (-$sidebar-width);
-  }
-  #sidebar.active {
-      margin-left: 0;
-  }
-  #sidebarCollapse span {
-      display: none;
-  }
 }
