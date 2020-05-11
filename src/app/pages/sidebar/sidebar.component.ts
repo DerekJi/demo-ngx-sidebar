@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild, AfterViewInit, Renderer2, ElementRef } from '@angular/core';
-import { SidebarService } from '@pages/core/sidebar.service';
+import { SidebarService } from '@core/sidebar.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
