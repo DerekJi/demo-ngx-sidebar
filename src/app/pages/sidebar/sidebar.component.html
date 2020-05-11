@@ -3,6 +3,7 @@
     class="{{ options.active ? 'active' : ''}}"
     [ngStyle]="{'margin-left': options.marginLeft }">
     <h4 class="text-center mt-4 pt-4">SideBar</h4>
+    <app-tree-menu></app-tree-menu>
   </nav>
 
   <div class="overlay {{ options.active ? 'active' : ''}}" (click)="toggleActive()"></div>
