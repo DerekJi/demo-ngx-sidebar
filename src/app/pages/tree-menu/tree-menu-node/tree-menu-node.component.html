@@ -1,0 +1,11 @@
+<div class="tm-node">
+  <a href="{{ node.url }}" *ngIf="!(node.nodes && node.nodes.length > 0); else nodechildren">{{ node.displayName }}</a>
+  <ng-template #nodechildren>
+    <a href="{{ node.url }}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{ node.displayName }}</a>
+    <ul class="collapse list-unstyled" id="{{ node.url.replace('#', '')}}" *ngIf="node.nodes">
+      <li class="tm-node" *ngFor="let subNode of node.nodes">
+        <a href="{{ subNode.url }}">{{ subNode.displayName }}</a>
+      </li>
+    </ul>
+  </ng-template>
+</div>
