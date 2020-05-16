@@ -10,8 +10,10 @@
     </div>
     <h4 class="text-center mx-2 pt-4">SideBar
     </h4>
-    <app-tree-menu></app-tree-menu>
+
+    <!-- Menu Content -->
+    <ng-content></ng-content>
   </nav>
 
-  <div class="overlay {{ options.active ? 'active' : ''}}" (click)="toggleActive()"></div>
+  <div *ngIf="isOverlay" class="overlay {{ options.active ? 'active' : ''}}" (click)="toggleActive()"></div>
 </ng-container>

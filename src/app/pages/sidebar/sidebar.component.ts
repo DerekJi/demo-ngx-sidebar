@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewChild, AfterViewInit, Renderer2, ElementRef } from '@angular/core';
 import { SidebarService } from '@core/sidebar.service';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,6 +11,8 @@ import { map } from 'rxjs/operators';
 export class SidebarComponent implements OnInit, AfterViewInit {
 
   @Input() width = '250px';
+  @Input() mode: 'overlay' | 'push' | 'slide' = 'overlay';
+  @Input() content = 'app-content';
   @Input() bgcolor: string;
   @Input() fgcolor: string;
 
@@ -24,13 +26,24 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.setStyle('width', this.width);
+    if (this.mode === 'overlay') {
+      this.setStyle('width', this.width);
+    } else {
+      this.setStyle('min-width', this.width);
+      this.setStyle('max-width', this.width);
+      this.renderer.setStyle(this.contentElement, 'width', '100%');
+    }
   }
 
   /**
    *
    */
   get active$(): Observable<boolean> { return this.sidebarService.active$(); }
+
+  get isOverlay(): boolean { return this.mode === 'overlay'; }
+  get contentElement(): Element {
+    return document.querySelector(this.content);
+  }
 
   /**
    *
@@ -45,7 +58,11 @@ export class SidebarComponent implements OnInit, AfterViewInit {
    *
    */
   toggleActive(): void {
-    this.sidebarService.toggleActive();
+    const active = this.sidebarService.toggleActive();
+    if (!this.isOverlay) {
+      const contentWidth = active ? `calc(100% - ${this.width})` : '100%';
+      this.renderer.setStyle(this.contentElement, 'width', contentWidth);
+    }
   }
 
   /**

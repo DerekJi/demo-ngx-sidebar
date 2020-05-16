@@ -22,8 +22,9 @@ export class SidebarService {
    *
    * @param active boolean
    */
-  public toggleActive(active: boolean = null): void {
+  public toggleActive(active: boolean = null): boolean {
     this.active = (active !== null) ? active : !this.active;
     this.activeState.next(this.active);
+    return this.active;
   }
 }
