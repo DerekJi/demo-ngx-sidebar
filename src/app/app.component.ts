@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SampleTreeMenu } from './data/sample-tree-menu';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'demo-ngx-sidebar';
+
+  menu = SampleTreeMenu;
 }

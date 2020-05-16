@@ -1,1 +1,14 @@
-<p>tree-menu works!</p>
+<ul class="tree-menu list-unstyled mx-4">
+  <p>{{ menu.title }}</p>
+  <li class="tm-node" *ngFor="let node of menu.nodes; let i = index" [ngClass]="{ active: i < 1 }">
+    <a href="{{ node.url }}" *ngIf="!(node.nodes && node.nodes.length > 0); else nodechildren">{{ node.displayName }}</a>
+    <ng-template #nodechildren>
+      <a href="{{ node.url }}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{ node.displayName }}</a>
+      <ul class="collapse list-unstyled" id="{{ node.url.replace('#', '')}}" *ngIf="node.nodes">
+        <li class="tm-node" *ngFor="let subNode of node.nodes">
+          <a href="{{ subNode.url }}">{{ subNode.displayName }}</a>
+        </li>
+      </ul>
+    </ng-template>
+  </li>
+</ul>
