@@ -2,7 +2,7 @@
   <a href="{{ node.url }}" *ngIf="!hasChildren">{{ node.displayName }}</a>
 
   <ng-container *ngIf="hasChildren">
-    <a href="{{ node.url }}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{ node.displayName }}</a>
+    <a href="{{ node.url }}" data-toggle="collapse" aria-expanded="false">{{ node.displayName }}</a>
     <ng-content></ng-content>
   </ng-container>
 </div>

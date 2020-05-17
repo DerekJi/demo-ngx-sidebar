@@ -1,3 +1,21 @@
 .tm-node {
   margin-left: 2px;
 }
+
+/**
+ * Change the icon as arrows
+ */
+a[data-toggle="collapse"] {
+  text-decoration: none;
+
+  &::after {
+    content: '\f104';
+    font-family: 'FontAweSome';
+    margin-left: 10px;
+    transition: all 0.5s;
+  }
+
+  &[aria-expanded="true"]::after {
+    content: '\f107';
+  }
+}
