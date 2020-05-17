@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ITreeMenu } from './models/tree-menu.interface';
+import { ITreeMenuNode } from './models/tree-menu-node.interface';
 
 @Component({
   selector: 'app-tree-menu',
@@ -8,7 +9,9 @@ import { ITreeMenu } from './models/tree-menu.interface';
 })
 export class TreeMenuComponent implements OnInit {
 
-  @Input() menu: ITreeMenu;
+  @Input() title = '';
+  @Input() id?: string;
+  @Input() nodes: ITreeMenuNode[];
 
   constructor() { }
 

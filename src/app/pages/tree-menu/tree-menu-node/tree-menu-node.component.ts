@@ -15,4 +15,6 @@ export class TreeMenuNodeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  get hasChildren(): boolean { return this.node.nodes && this.node.nodes.length > 0; }
+  get nodeId(): string { return this.node.url && this.hasChildren ? this.node.url.replace('#', '') : ''; }
 }

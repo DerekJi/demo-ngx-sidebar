@@ -1,8 +1,9 @@
 <div class="d-flex align-items-stretch">
 
   <app-sidebar width="280px" mode="overlay">
-    <app-tree-menu [menu]="menu"></app-tree-menu>
+    <app-tree-menu [title]="menu.title" [nodes]="menu.nodes"></app-tree-menu>
   </app-sidebar>
+
   <app-content></app-content>
 
 </div>
