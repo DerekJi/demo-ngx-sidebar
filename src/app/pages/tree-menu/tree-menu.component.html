@@ -1,4 +1,4 @@
-<ul class="tree-menu list-unstyled mx-2" [id]="id" [ngClass]="{ collapse: !emptyId }">
+<ul class="tree-menu list-unstyled" [id]="id" [ngClass]="{ collapse: !emptyId }">
   <p *ngIf="title">{{ title }}</p>
   <li class="tm-node" *ngFor="let node of nodes; let i = index" [ngClass]="{ active: i < 1 }">
     <app-tree-menu-node [node]="node">

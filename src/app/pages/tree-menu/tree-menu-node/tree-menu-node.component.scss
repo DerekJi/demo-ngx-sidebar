@@ -1,21 +1,30 @@
-.tm-node {
-  margin-left: 2px;
-}
-
 /**
  * Change the icon as arrows
  */
 a[data-toggle="collapse"] {
-  text-decoration: none;
-
   &::after {
-    content: '\f104';
+    content: '\f106';
     font-family: 'FontAweSome';
-    margin-left: 10px;
+    margin-right: 16px;
+    float: right;
     transition: all 0.5s;
+    color: white;
   }
 
   &[aria-expanded="true"]::after {
     content: '\f107';
+  }
+}
+
+a {
+  text-decoration: none;
+  display: block;
+
+  color: white;
+  padding: 8px 8px;
+  margin-bottom: 1px;
+
+  &:hover {
+    background-color: #2b90d9;
   }
 }
