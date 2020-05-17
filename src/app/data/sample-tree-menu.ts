@@ -7,7 +7,17 @@ const sampleHome: ITreeMenuNode = {
   nodes: [
     {
       displayName: 'Home1',
-      url: '#',
+      url: '#home1',
+      nodes: [
+        {
+          displayName: 'Home 1.1. Test',
+          url: '#'
+        }
+        , {
+          displayName: 'Home 1.2. Validation',
+          url: '#'
+        }
+      ]
     },
     {
       displayName: 'Home2',

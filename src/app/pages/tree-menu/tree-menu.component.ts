@@ -18,4 +18,16 @@ export class TreeMenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  get emptyId(): boolean {
+    const empty = this.id === null || this.id === undefined || this.id === '';
+    console.log(`empty(${this.id}) = ${empty}`);
+    return empty;
+  }
+
+  hasChildren(node: ITreeMenuNode): boolean { return node.nodes && node.nodes.length > 0; }
+  nodeId(node: ITreeMenuNode): string {
+    const id = node.url && this.hasChildren(node) ? node.url.replace('#', '') : '';
+    return id;
+  }
+
 }
