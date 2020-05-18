@@ -1,3 +1,5 @@
+@import '_variables.scss';
+
 /**
  * Change the icon as arrows
  */
@@ -26,5 +28,13 @@ a {
 
   &:hover {
     background-color: #2b90d9;
+  }
+}
+
+.tm-node {
+  border-left: 2px solid $primary-bgcolor;
+
+  &.active {
+    border-left: 2px solid #2b90d9;
   }
 }

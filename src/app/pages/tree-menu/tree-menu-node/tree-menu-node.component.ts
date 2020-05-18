@@ -10,6 +10,8 @@ export class TreeMenuNodeComponent implements OnInit {
 
   @Input() node: ITreeMenuNode;
 
+  public active = false;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -17,4 +19,8 @@ export class TreeMenuNodeComponent implements OnInit {
 
   get hasChildren(): boolean { return this.node.nodes && this.node.nodes.length > 0; }
   get nodeId(): string { return this.node.url && this.hasChildren ? this.node.url.replace('#', '') : ''; }
+
+  toggleActive(): void {
+    this.active = !this.active;
+  }
 }

@@ -1,8 +1,14 @@
-<div class="tm-node">
-  <a href="{{ node.url }}" *ngIf="!hasChildren">{{ node.displayName }}</a>
+<div class="tm-node {{ active ? 'active' : '' }}">
+  <a href="{{ node.url }}" *ngIf="!hasChildren" (click)="toggleActive()">
+    <i class="{{ node.icon }}">&nbsp;</i>
+    {{ node.displayName }}
+  </a>
 
   <ng-container *ngIf="hasChildren">
-    <a href="{{ node.url }}" data-toggle="collapse" aria-expanded="false">{{ node.displayName }}</a>
+    <a href="{{ node.url }}" data-toggle="collapse" aria-expanded="false" (click)="toggleActive()">
+      <i class="{{ node.icon }}">&nbsp;</i>
+      {{ node.displayName }}
+    </a>
     <ng-content></ng-content>
   </ng-container>
 </div>
