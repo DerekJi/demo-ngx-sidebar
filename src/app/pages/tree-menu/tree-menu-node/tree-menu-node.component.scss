@@ -31,10 +31,18 @@ a {
   }
 }
 
-.tm-node {
-  border-left: 2px solid $primary-bgcolor;
+.level-1 {
+  background-color: $primary-bgcolor;
+}
 
-  &.active {
-    border-left: 2px solid #2b90d9;
-  }
+.level-2 {
+  background-color: darken($primary-bgcolor, 5%);
+}
+
+.level-3 {
+  background-color: darken($primary-bgcolor, 10%);
+}
+
+.level-4 {
+  background-color: darken($primary-bgcolor, 13%);
 }

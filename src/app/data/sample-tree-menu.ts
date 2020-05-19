@@ -2,26 +2,28 @@ import { ITreeMenu } from '@pages/tree-menu/models/tree-menu.interface';
 import { ITreeMenuNode } from '@pages/tree-menu/models/tree-menu-node.interface';
 
 const sampleHome: ITreeMenuNode = {
-  displayName: 'Home',
+  displayName: 'Dashboard',
   url: '#homeSubmenu',
   level: 1,
   icon: 'fa fa-windows',
   nodes: [
     {
-      displayName: 'Dashboard',
+      displayName: 'Dashboard v1',
       url: '#home1',
-      icon: 'fa',
+      icon: 'fa fa-lightbulb-o',
       level: 2,
       nodes: [
         {
           displayName: 'Dashboard 1.1',
           url: '#',
           level: 3,
+          icon: 'fa fa-lightbulb-o',
         }
         , {
           displayName: 'Dashboard 1.2',
           url: '#',
           level: 3,
+          icon: 'fa fa-lightbulb-o',
         }
       ]
     },
@@ -29,13 +31,13 @@ const sampleHome: ITreeMenuNode = {
       displayName: 'Dashboard v2',
       url: '#',
       level: 2,
-      icon: 'fa',
+      icon: 'fa fa-lightbulb-o',
     },
     {
       displayName: 'Dashboard v3',
       url: '#',
       level: 2,
-      icon: 'fa',
+      icon: 'fa fa-lightbulb-o',
     }
   ]
 };

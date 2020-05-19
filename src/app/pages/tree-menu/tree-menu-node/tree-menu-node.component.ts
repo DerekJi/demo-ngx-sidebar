@@ -23,4 +23,8 @@ export class TreeMenuNodeComponent implements OnInit {
   toggleActive(): void {
     this.active = !this.active;
   }
+
+  array(num: number): Array<number> {
+    return Array(num);
+  }
 }
